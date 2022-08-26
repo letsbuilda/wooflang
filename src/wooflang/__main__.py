@@ -1,11 +1,8 @@
-# -----------------------------------------------------------------------------
-# calc.py
-# -----------------------------------------------------------------------------
+from sly import Lexer as _Lexer, Parser as _Parser
 
-from sly import Lexer, Parser
 
-class CalcLexer(Lexer):
-    tokens = { NAME, NUMBER, PLUS, TIMES, MINUS, DIVIDE, ASSIGN, LPAREN, RPAREN }
+class Lexer(_Lexer):
+    tokens = {NAME, NUMBER, PLUS, TIMES, MINUS, DIVIDE, ASSIGN, LPAREN, RPAREN}
     ignore = ' \t'
 
     # Tokens
@@ -32,18 +29,19 @@ class CalcLexer(Lexer):
         print("Illegal character '%s'" % t.value[0])
         self.index += 1
 
-class CalcParser(Parser):
+
+class Parser(_Parser):
     debugfile = 'parser.out'
-    tokens = CalcLexer.tokens
+    tokens = Lexer.tokens
 
     precedence = (
         ('left', PLUS, MINUS),
         ('left', TIMES, DIVIDE),
         ('right', UMINUS),
-        )
+    )
 
     def __init__(self):
-        self.names = { }
+        self.names = {}
 
     @_('NAME ASSIGN expr')
     def statement(self, p):
@@ -89,12 +87,13 @@ class CalcParser(Parser):
             print(f'Undefined name {p.NAME!r}')
             return 0
 
+
 if __name__ == '__main__':
-    lexer = CalcLexer()
-    parser = CalcParser()
+    lexer = Lexer()
+    parser = Parser()
     while True:
         try:
-            text = input('calc > ')
+            text = input('woof > ')
         except EOFError:
             break
         if text:
