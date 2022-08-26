@@ -1,0 +1,13 @@
+[[package]]
+name = "sly"
+version = "0.4"
+summary = "SLY - Sly Lex Yacc"
+
+[metadata]
+lock_version = "4.0"
+content_hash = "sha256:c93daed9e2704b157b7e4b1df4b8a55219171a57cb1c6b2d27f9ab51c73d18e9"
+
+[metadata.files]
+"sly 0.4" = [
+    {url = "https://files.pythonhosted.org/packages/7b/16/62a654feb0eaf64669b04c99ec6335a3937c1991620c716dcdd9a0f9d095/sly-0.4.tar.gz", hash = "sha256:e5f2266a231322cc17519fbc3a3ba1c6335fed5a9a55abe0e598a35aea0ac32a"},
+]
