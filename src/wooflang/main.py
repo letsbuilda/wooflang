@@ -33,6 +33,7 @@ class CalcLexer(Lexer):
         self.index += 1
 
 class CalcParser(Parser):
+    debugfile = 'parser.out'
     tokens = CalcLexer.tokens
 
     precedence = (

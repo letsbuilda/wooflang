@@ -1,3 +1,6 @@
 # PDM
 .pdm.toml
 .venv
+
+# Generated data
+parser.out
